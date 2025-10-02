@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn One Fun Thing a Day</title>
+    <meta name="description" content="Discover interesting facts daily! Build your learning streak with bite-sized knowledge from science, history, art, space, and languages.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1><i class="fas fa-lightbulb"></i> Learn One Fun Thing a Day</h1>
+        <div class="profile">
+            <i class="fas fa-user-circle fa-2x" id="profile-icon"></i>
+            <div id="dropdown" class="dropdown-content">
+                <h3>Settings</h3>
+                <div class="settings-item">
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Dark Mode</span>
+                </div>
+                <div class="settings-item">
+                    <label class="switch">
+                        <input type="checkbox" id="sound-toggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Sound Effects</span>
+                </div>
+                <div class="settings-item">
+                    <button id="reset-stats" class="reset-btn"><i class="fas fa-redo"></i> Reset Stats</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <p class="subtitle">Discover a bite-sized fact, word, or mini-lesson every day!</p>
+        
+        <!-- Theme Selector -->
+        <div class="theme-selector">
+            <label for="theme-select">Choose a Theme:</label>
+            <select id="theme-select">
+                <option value="science">🔬 Science</option>
+                <option value="language">📚 Language</option>
+                <option value="art">🎨 Art</option>
+                <option value="space">🚀 Space</option>
+                <option value="history">🏛️ History</option>
+            </select>
+        </div>
+        
+        <!-- Fact Card -->
+        <div id="fact-card" class="fact-card">
+            <button id="favorite-btn" class="favorite-btn" title="Add to favorites">
+                <i class="far fa-heart"></i>
+            </button>
+            <h2 id="fact-title">Today's Fun Thing</h2>
+            <div id="loader" class="loader"></div>
+            <p id="fact-content" class="hidden">Loading your daily dose...</p>
+            <p id="fact-source" class="fact-source hidden"></p>
+            
+            <!-- Difficulty Badge -->
+            <div id="difficulty-badge" class="difficulty-badge hidden"></div>
+            
+            <div class="button-group">
+                <button id="new-fact" class="new-fact-btn">
+                    <i class="fas fa-sync-alt"></i> Get New Fact
+                </button>
+                <button id="share-fact" class="share-btn">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+                <button id="read-aloud" class="read-btn">
+                    <i class="fas fa-volume-up"></i> Read Aloud
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-grid">
+            <!-- Streak Section -->
+            <div class="stat-card streak-section">
+                <h3><i class="fas fa-fire"></i> Your Streak</h3>
+                <div id="streak-count" class="streak-badge">0</div>
+                <p class="stat-label">days</p>
+                <div class="streak-progress">
+                    <div id="streak-progress-bar" class="streak-progress-bar"></div>
+                </div>
+                <p class="streak-text">Keep coming back daily!</p>
+            </div>
+
+            <!-- Total Facts -->
+            <div class="stat-card">
+                <h3><i class="fas fa-book-open"></i> Facts Learned</h3>
+                <div id="total-facts" class="stat-number">0</div>
+                <p class="stat-label">total facts</p>
+            </div>
+
+            <!-- Favorites -->
+            <div class="stat-card">
+                <h3><i class="fas fa-heart"></i> Favorites</h3>
+                <div id="favorite-count" class="stat-number">0</div>
+                <p class="stat-label">saved facts</p>
+                <button id="view-favorites" class="view-favorites-btn">View All</button>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="achievements-section">
+            <h3><i class="fas fa-trophy"></i> Achievements</h3>
+            <div id="achievements-list" class="achievements-list">
+                <!-- Achievements will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Favorites Modal -->
+        <div id="favorites-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2><i class="fas fa-heart"></i> Your Favorite Facts</h2>
+                <div id="favorites-list" class="favorites-list">
+                    <!-- Favorites will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Chart -->
+        <div class="chart-section">
+            <h3><i class="fas fa-chart-line"></i> Weekly Progress</h3>
+            <canvas id="progress-chart"></canvas>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Powered by Open Trivia DB • Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> for curious minds</p>
+        <p class="footer-links">
+            <a href="#" id="about-link">About</a> • 
+            <a href="#" id="privacy-link">Privacy</a> • 
+            <a href="#" id="contact-link">Contact</a>
+        </p>
+    </footer>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -903,3 +903,10 @@ console.log('  Ctrl/Cmd + N: New Fact');
 console.log('  Ctrl/Cmd + S: Share');
 console.log('  Ctrl/Cmd + R: Read Aloud');
 console.log('  Ctrl/Cmd + F: Toggle Favorite');
+
+// ===== Supabase Configuration =====
+const SUPABASE_URL = 'https://yplmeudthlmwokqgevym.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlwbG1ldWR0aGxtd29rcWdldnltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzOTU5NDYsImV4cCI6MjA3NDk3MTk0Nn0.vl91ElVo5vtpkoO4uFpRLHCXG8HXCw-xGQEE3egwX14';
+
+const { createClient } = supabase;
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)

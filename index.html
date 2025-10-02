@@ -135,6 +135,27 @@
         </div>
     </div>
 
+        <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="auth-close">&times;</span>
+            <h2 id="auth-title">Welcome Back!</h2>
+            
+            <div id="auth-form">
+                <input type="email" id="auth-email" placeholder="Email" required>
+                <input type="password" id="auth-password" placeholder="Password" required>
+                <button id="auth-submit" class="auth-btn">Sign In</button>
+                
+                <p class="auth-toggle">
+                    <span id="auth-mode-text">Don't have an account?</span>
+                    <a href="#" id="auth-mode-switch">Sign Up</a>
+                </p>
+            </div>
+            
+            <div id="auth-message" class="auth-message"></div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>Powered by Open Trivia DB • Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> for curious minds</p>
